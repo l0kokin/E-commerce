@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Poppins", "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background: linear-gradient(
+      180deg,
+      #ededf5 43.29%,
+      rgba(246, 246, 210, 0.24) 66.44%
+    ),
+    linear-gradient(180deg, #fdf5e9 0%, #ededf5 100%);
+}
+
+code {
+  font-family: Poppins, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+html {
+  font-size: 62.5%;
+}
