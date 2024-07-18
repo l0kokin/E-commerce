@@ -36,5 +36,12 @@ export const ButtonYellow = styled.button`
   width: fit-content;
   margin-top: 5rem;
   padding: 0.8rem 5.3rem;
+  box-shadow: 5px 5px 0 ${colors.white}, 6px 6px 0 ${colors.black};
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
   cursor: pointer;
+
+  &:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 3px 3px 0 ${colors.white}, 4px 4px 0 ${colors.black};
+  }
 `;

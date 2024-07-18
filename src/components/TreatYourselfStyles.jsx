@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "../colors";
 
 export const TreatYourselfContainer = styled.div`
-  margin: 16rem 2rem 12rem 2rem;
+  margin: 16rem 2rem 6rem 2rem;
 
   h2 {
     font-size: 4.8rem;

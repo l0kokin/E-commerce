@@ -19,7 +19,7 @@ export const HeroText = styled.div`
   display: flex;
   flex-direction: column;
   z-index: 1000;
-  max-width: 62.6rem;
+  width: 50%;
   margin-bottom: 5rem;
 
   h1 {
@@ -35,6 +35,7 @@ export const ButtonBlack = styled.button`
   color: ${colors.yellow};
   width: fit-content;
   padding: 1.2rem 4rem;
+  margin-top: 4rem;
   border-radius: 8px;
   font-size: 1.8rem;
   font-weight: 500;

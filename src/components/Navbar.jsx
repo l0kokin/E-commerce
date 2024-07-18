@@ -6,11 +6,11 @@ function Navbar() {
   return (
     <Nav>
       <NavItem to="/">
-        <Logo>SoSo</Logo>
+        <Logo>SoCo</Logo>
       </NavItem>
       <NavLink to="/">Home</NavLink>
-      <NavLink to="/cart">Cart</NavLink>
       <NavLink to="/products">Products</NavLink>
+      <NavLink to="/cart">Cart</NavLink>
       <NavItem to="/products">
         <SearchIcon />
       </NavItem>
