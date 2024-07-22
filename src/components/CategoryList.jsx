@@ -53,9 +53,9 @@ function Category() {
     <>
       {categories.map((category, index) => (
         <CategoryItem key={index}>
-          <p>{category}</p>
+          <h3>{category}</h3>
           <img src={getCategoryImage(category)} alt={category} />
-          <Link to={"/products"}>
+          <Link to={`/products?category=${encodeURIComponent(category)}`}>
             <ButtonYellow>See More</ButtonYellow>
           </Link>
         </CategoryItem>

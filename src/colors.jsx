@@ -7,6 +7,7 @@ export const colors = {
   lightYellow: "#f8f5da",
   lightPink: "#FCF5EA",
   lightBlue: "#ededf5",
+  lightOrange: "#f7d8b7",
   background:
     "linear-gradient(180deg, #EDEDF5 43.29%, rgba(246, 246, 210, 0.24) 66.44%)",
 };

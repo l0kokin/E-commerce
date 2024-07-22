@@ -1,17 +1,39 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import ProductCard from "./ProductCard";
 import { ProductsContainer } from "./ProductListStyles";
 import { ProductContext } from "../context/context";
+import { useLocation } from "react-router-dom";
+import Loader from "./Loader";
+
+const useQuery = () => {
+  return new URLSearchParams(useLocation().search);
+};
 
 const ProductList = () => {
-  const { products } = useContext(ProductContext);
+  const { fetchByCategory, products, loading } = useContext(ProductContext);
+  const query = useQuery();
+  const category = query.get("category");
+
+  useEffect(() => {
+    if (category) {
+      fetchByCategory(category);
+    }
+  }, []);
+
+  console.log(loading);
 
   return (
-    <ProductsContainer>
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
-    </ProductsContainer>
+    <>
+      {loading ? (
+        <Loader />
+      ) : (
+        <ProductsContainer>
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </ProductsContainer>
+      )}
+    </>
   );
 };
 

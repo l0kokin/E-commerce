@@ -7,10 +7,12 @@ export const ProductContext = createContext();
 export const ProductProvider = ({ children }) => {
   const [context, setContext] = useState({
     products: [],
-    filteredProducts: [],
     categories: [],
+    loading: true,
     fetchProducts: () => {},
     fetchCategories: () => {},
+    filterProducts: () => {},
+    fetchByCategory: () => {},
   });
 
   useEffect(() => {
@@ -19,18 +21,43 @@ export const ProductProvider = ({ children }) => {
         ...ctx,
         fetchProducts,
         fetchCategories,
-        // fetchFilteredProducts,
+        filterProducts,
+        fetchByCategory,
       };
     });
   }, []);
 
   const fetchProducts = () => {
-    fetch(BASE_URL)
+    setContext((ctx) => ({ ...ctx, loading: true }));
+    fetch(`${BASE_URL}`)
       .then((response) => response.json())
       .then((data) => {
         console.log("Products fetched:", data);
         setContext((ctx) => {
-          return { ...ctx, products: data, filteredProducts: data };
+          return {
+            ...ctx,
+            products: data,
+            filteredProducts: data,
+            loading: false,
+          };
+        });
+      })
+      .catch((error) => console.error("Error fetching products:", error));
+  };
+
+  const fetchByCategory = (category) => {
+    setContext((ctx) => ({ ...ctx, loading: true }));
+    fetch(`${BASE_URL}/category/${category}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Products fetched:", data);
+        setContext((ctx) => {
+          return {
+            ...ctx,
+            products: data,
+            filteredProducts: data,
+            loading: false,
+          };
         });
       })
       .catch((error) => console.error("Error fetching products:", error));
@@ -46,6 +73,16 @@ export const ProductProvider = ({ children }) => {
         });
       })
       .catch((error) => console.error("Error fetching products:", error));
+  };
+
+  const filterProducts = (userInput) => {
+    setContext((ctx) => {
+      const filtered = ctx.products.filter((product) =>
+        product.title.toLowerCase().includes(userInput.toLowerCase())
+      );
+
+      return { ...ctx, products: filtered };
+    });
   };
 
   return (

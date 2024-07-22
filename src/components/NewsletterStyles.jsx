@@ -50,6 +50,11 @@ export const SignupForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  h2 {
+    font-size: 3rem;
+    white-space: nowrap;
+  }
 `;
 
 export const Input = styled.input`

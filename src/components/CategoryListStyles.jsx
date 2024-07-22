@@ -14,7 +14,7 @@ export const CategoryItem = styled.div`
   background-color: ${colors.white};
   padding: 0 3.8rem 3.8rem;
 
-  p {
+  h3 {
     font-size: 2.4rem;
     font-weight: 700;
     line-height: 3.2rem;
@@ -34,7 +34,8 @@ export const ButtonYellow = styled.button`
   border: 1px solid ${colors.black};
   border-radius: 8px;
   width: fit-content;
-  margin-top: 5rem;
+  white-space: nowrap;
+  margin-top: 4.2rem;
   padding: 0.8rem 5.3rem;
   box-shadow: 5px 5px 0 ${colors.white}, 6px 6px 0 ${colors.black};
   transition: transform 0.1s ease, box-shadow 0.1s ease;

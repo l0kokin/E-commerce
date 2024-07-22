@@ -1,14 +1,15 @@
 import React from "react";
 import { Card, trimString } from "./ProductCardStyles";
+import { ButtonYellow } from "./CategoryListStyles";
 
 const ProductCard = ({ product }) => {
   return (
     <Card>
-      <img src={product.image} alt={product.title} />
       <h3>{trimString(product.title, 3)}</h3>
       <p>{trimString(product.description, 8)}</p>
-      <p>${product.price}</p>
-      <button>Add to Cart</button>
+      <img src={product.image} alt={product.title} />
+      <span>${product.price}</span>
+      <ButtonYellow>Add to Cart</ButtonYellow>
     </Card>
   );
 };

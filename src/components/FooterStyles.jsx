@@ -12,7 +12,7 @@ export const FooterText = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-color: #f7d8b7;
+  background-color: ${colors.lightOrange};
 
   h3 {
     font-size: 4.8rem;
