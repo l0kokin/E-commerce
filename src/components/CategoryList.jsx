@@ -16,7 +16,7 @@ function CategoryList() {
 }
 
 function Category() {
-  const { categories, products, fetchCategories } = useContext(ProductContext);
+  const { categories, fetchCategories } = useContext(ProductContext);
 
   useEffect(() => {
     fetchCategories();
@@ -44,10 +44,6 @@ function Category() {
 
     return image;
   };
-
-  useEffect(() => {
-    console.log("Categories in CategoryList:", categories);
-  }, [categories]);
 
   return (
     <>

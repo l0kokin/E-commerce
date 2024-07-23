@@ -9,7 +9,7 @@ const Search = () => {
 
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [fetchProducts]);
 
   return (
     <>
@@ -18,7 +18,6 @@ const Search = () => {
           placeholder="Search for products..."
           onChange={(e) => {
             filterProducts(e.target.value);
-            console.log(e);
           }}
         />
         <SearchIcon />

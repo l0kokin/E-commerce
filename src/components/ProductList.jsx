@@ -18,7 +18,7 @@ const ProductList = () => {
     if (category) {
       fetchByCategory(category);
     }
-  }, []);
+  }, [fetchByCategory, category]);
 
   console.log(loading);
 

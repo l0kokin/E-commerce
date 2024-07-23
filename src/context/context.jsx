@@ -7,6 +7,7 @@ export const ProductContext = createContext();
 export const ProductProvider = ({ children }) => {
   const [context, setContext] = useState({
     products: [],
+    originalProducts: [],
     categories: [],
     loading: true,
     fetchProducts: () => {},
@@ -32,11 +33,11 @@ export const ProductProvider = ({ children }) => {
     fetch(`${BASE_URL}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log("Products fetched:", data);
         setContext((ctx) => {
           return {
             ...ctx,
             products: data,
+            originalProducts: data,
             filteredProducts: data,
             loading: false,
           };
@@ -50,15 +51,12 @@ export const ProductProvider = ({ children }) => {
     fetch(`${BASE_URL}/category/${category}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log("Products fetched:", data);
-        setContext((ctx) => {
-          return {
-            ...ctx,
-            products: data,
-            filteredProducts: data,
-            loading: false,
-          };
-        });
+        setContext((ctx) => ({
+          ...ctx,
+          products: data,
+          filteredProducts: data,
+          loading: false,
+        }));
       })
       .catch((error) => console.error("Error fetching products:", error));
   };
@@ -67,16 +65,20 @@ export const ProductProvider = ({ children }) => {
     fetch(`${BASE_URL}/categories`)
       .then((response) => response.json())
       .then((data) => {
-        console.log("Categories fetched:", data);
-        setContext((ctx) => {
-          return { ...ctx, categories: data };
-        });
+        setContext((ctx) => ({
+          ...ctx,
+          categories: data,
+        }));
       })
       .catch((error) => console.error("Error fetching products:", error));
   };
 
   const filterProducts = (userInput) => {
     setContext((ctx) => {
+      if (userInput.trim() === "") {
+        return { ...ctx, products: ctx.originalProducts };
+      }
+
       const filtered = ctx.products.filter((product) =>
         product.title.toLowerCase().includes(userInput.toLowerCase())
       );
