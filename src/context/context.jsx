@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 
 const BASE_URL = "https://fakestoreapi.com/products";
+const CART_STORAGE_KEY = "user-cart";
 
 export const ProductContext = createContext();
 
@@ -10,19 +11,21 @@ export const ProductProvider = ({ children }) => {
     originalProducts: [],
     categories: [],
     loading: true,
-    cart: [],
+    cart: JSON.parse(localStorage.getItem(CART_STORAGE_KEY)) || [],
     fetchProducts: () => {},
     fetchCategories: () => {},
     filterProducts: () => {},
     fetchByCategory: () => {},
+    addToCart: () => {},
+    deleteFromCart: () => {},
   });
 
   useEffect(() => {
     setContext((ctx) => {
       return {
         ...ctx,
-        fetchProducts,
         fetchCategories,
+        fetchProducts,
         filterProducts,
         fetchByCategory,
         addToCart,
@@ -30,6 +33,10 @@ export const ProductProvider = ({ children }) => {
       };
     });
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(context.cart));
+  }, [context.cart]);
 
   const fetchProducts = () => {
     setContext((ctx) => ({ ...ctx, loading: true }));
@@ -93,8 +100,6 @@ export const ProductProvider = ({ children }) => {
   const addToCart = (item) => {
     setContext((ctx) => {
       const isItemInCart = ctx.cart.some((cartItem) => cartItem.id === item.id);
-
-      console.log(item);
 
       if (!isItemInCart) {
         return { ...ctx, cart: [...ctx.cart, item] };
