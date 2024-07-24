@@ -10,6 +10,7 @@ export const ProductProvider = ({ children }) => {
     originalProducts: [],
     categories: [],
     loading: true,
+    cart: [],
     fetchProducts: () => {},
     fetchCategories: () => {},
     filterProducts: () => {},
@@ -24,6 +25,8 @@ export const ProductProvider = ({ children }) => {
         fetchCategories,
         filterProducts,
         fetchByCategory,
+        addToCart,
+        deleteFromCart,
       };
     });
   }, []);
@@ -84,6 +87,33 @@ export const ProductProvider = ({ children }) => {
       );
 
       return { ...ctx, products: filtered };
+    });
+  };
+
+  const addToCart = (item) => {
+    setContext((ctx) => {
+      const isItemInCart = ctx.cart.some((cartItem) => cartItem.id === item.id);
+
+      console.log(item);
+
+      if (!isItemInCart) {
+        return { ...ctx, cart: [...ctx.cart, item] };
+      }
+      return ctx;
+    });
+  };
+
+  const deleteFromCart = (item) => {
+    setContext((ctx) => {
+      const isItemInCart = ctx.cart.some((cartItem) => cartItem.id === item.id);
+
+      if (isItemInCart) {
+        const updatedCart = ctx.cart.filter(
+          (cartItem) => cartItem.id !== item.id
+        );
+        return { ...ctx, cart: updatedCart };
+      }
+      return ctx;
     });
   };
 

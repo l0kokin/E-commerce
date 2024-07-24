@@ -30,11 +30,11 @@ export const Content = styled.div`
 
 export const Headline = styled.h2`
   font-family: "Value Serif Pro", serif;
-  font-size: 48px;
+  font-size: 4.8rem;
   font-weight: 400;
-  line-height: 57.6px;
+  line-height: 5rem;
   text-align: left;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 `;
 
 export const Description = styled.p`

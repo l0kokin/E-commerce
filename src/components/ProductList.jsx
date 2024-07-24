@@ -20,8 +20,6 @@ const ProductList = () => {
     }
   }, [fetchByCategory, category]);
 
-  console.log(loading);
-
   return (
     <>
       {loading ? (
