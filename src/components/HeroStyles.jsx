@@ -13,6 +13,11 @@ export const HeroContainer = styled.div`
     position: absolute;
     top: 0;
     right: 0;
+
+    /* 1024px */
+    @media (max-width: 64em) {
+      opacity: 0.7;
+    }
   }
 `;
 

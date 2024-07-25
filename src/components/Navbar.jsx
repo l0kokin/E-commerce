@@ -12,7 +12,7 @@ import { ReactComponent as BurgerIcon } from "../icons/burger.svg";
 import { ReactComponent as CloseIcon } from "../icons/close.svg";
 
 function Navbar() {
-  const [openBurgerMenu, setOpenBurgerMenu] = useState(true);
+  const [openBurgerMenu, setOpenBurgerMenu] = useState(false);
 
   const toggleMenu = () => {
     setOpenBurgerMenu(!openBurgerMenu);
