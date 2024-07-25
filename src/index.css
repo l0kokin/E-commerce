@@ -20,4 +20,29 @@ code {
 
 html {
   font-size: 62.5%;
+
+  /* 1440px */
+  @media (max-width: 90em) {
+    font-size: 56.25%;
+  }
+
+  /* 1248px */
+  @media (max-width: 78em) {
+    font-size: 50%;
+  }
+
+  /* 896px */
+  @media (max-width: 56em) {
+    font-size: 43.75%;
+  }
+
+  /* 688px */
+  @media (max-width: 43em) {
+    font-size: 37.5%;
+  }
+
+  /* 512px */
+  @media (max-width: 32em) {
+    font-size: 34%;
+  }
 }

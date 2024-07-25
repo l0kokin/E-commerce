@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import BackgroundImg from "../images/newsletter.jpg";
-import { colors } from "../colors";
+import { colors } from "../styles/colors";
 
 export const NewsletterContainer = styled.div`
   position: relative;
@@ -14,12 +14,17 @@ export const NewsletterContainer = styled.div`
 
   h2 {
     font-family: Value Serif Pro;
-    font-size: 48px;
+    font-size: 4.8rem;
     font-weight: 400;
-    line-height: 57.6px;
+    line-height: 5.7rem;
     text-align: left;
     width: 50%;
     z-index: 1000;
+
+    /* 896px */
+    @media (max-width: 56em) {
+      width: 90%;
+    }
   }
 `;
 
@@ -44,6 +49,11 @@ export const Description = styled.p`
   letter-spacing: 0.01em;
   width: 40%;
   color: ${colors.lightText};
+
+  /* 896px */
+  @media (max-width: 56em) {
+    width: 90%;
+  }
 `;
 
 export const SignupForm = styled.form`

@@ -1,9 +1,31 @@
 import styled from "styled-components";
-import { colors } from "../colors";
+import { colors } from "../styles/colors";
 
 export const FooterContainer = styled.div`
   display: flex;
   justify-content: space-between;
+
+  img {
+    /* 1440px */
+    @media (max-width: 90em) {
+      width: 40%;
+    }
+
+    /* 896px */
+    @media (max-width: 56em) {
+      width: 45%;
+    }
+
+    /* 704px */
+    @media (max-width: 44em) {
+      width: 50%;
+    }
+
+    /* 560px */
+    @media (max-width: 35em) {
+      display: none;
+    }
+  }
 `;
 
 export const FooterText = styled.div`
@@ -31,6 +53,11 @@ export const SubHeader = styled.p`
   margin: 0;
   text-align: center;
   text-transform: uppercase;
+
+  // 1440px
+  @media (max-width: 90em) {
+    margin-top: 3rem;
+  }
 `;
 
 export const SocialMediaContainer = styled.div`

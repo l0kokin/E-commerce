@@ -1,9 +1,15 @@
 import styled from "styled-components";
-import { colors } from "../colors";
+import { colors } from "../styles/colors";
 
 export const Categories = styled.div`
   display: flex;
   gap: 2.4rem;
+
+  // 1104px
+  @media (max-width: 69em) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export const CategoryItem = styled.div`
@@ -30,6 +36,7 @@ export const CategoryItem = styled.div`
 `;
 
 export const ButtonYellow = styled.button`
+  font-size: 1.6rem;
   background-color: ${colors.yellow};
   border: 1px solid ${colors.black};
   border-radius: 8px;
@@ -37,7 +44,7 @@ export const ButtonYellow = styled.button`
   white-space: nowrap;
   margin-top: 4.2rem;
   padding: 0.8rem 5.3rem;
-  box-shadow: 5px 5px 0 ${colors.white}, 6px 6px 0 ${colors.black};
+  box-shadow: 0.5rem 0.5rem 0 ${colors.white}, 0.6rem 0.6rem 0 ${colors.black};
   transition: transform 0.1s ease, box-shadow 0.1s ease;
   cursor: pointer;
 

@@ -17,7 +17,3 @@ function Newsletter() {
 }
 
 export default Newsletter;
-
-//   <h2>
-//     📬 Welcome aboard! Your inbox is about to get a whole lot more exciting.
-//   </h2>;

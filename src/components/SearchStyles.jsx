@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../colors";
+import { colors } from "../styles/colors";
 
 export const Button = styled.button`
   border: none;
@@ -11,7 +11,7 @@ export const SearchContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin: 2rem;
+  margin: 4rem 2rem 2rem 2rem;
 `;
 
 export const SearchInput = styled.input`

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../colors";
+import { colors } from "../styles/colors";
 
 export const TreatYourselfContainer = styled.div`
   margin: 16rem 2rem 6rem 2rem;
@@ -16,6 +16,16 @@ export const Cards = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 2.4rem;
+
+  // 1680px
+  @media (max-width: 105em) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* 896px */
+  @media (max-width: 56em) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export const Card = styled.div`
@@ -31,6 +41,11 @@ export const Card = styled.div`
     font-size: 2rem;
     font-weight: 400;
     line-height: 2.4rem;
+  }
+
+  // 1680px
+  @media (max-width: 105em) {
+    margin-bottom: 1rem;
   }
 `;
 

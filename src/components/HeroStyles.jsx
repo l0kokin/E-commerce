@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../colors";
+import { colors } from "../styles/colors";
 
 export const HeroContainer = styled.div`
   display: flex;
@@ -27,6 +27,11 @@ export const HeroText = styled.div`
     font-size: 5rem;
     font-weight: 600;
     line-height: 7rem;
+  }
+
+  /* 560px */
+  @media (max-width: 35em) {
+    width: 70%;
   }
 `;
 
