@@ -26,6 +26,11 @@ export const Cards = styled.div`
   @media (max-width: 56em) {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  // 448px
+  @media (max-width: 28em) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 export const Card = styled.div`

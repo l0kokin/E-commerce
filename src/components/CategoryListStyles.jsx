@@ -10,6 +10,11 @@ export const Categories = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
+
+  // 448px
+  @media (max-width: 28em) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 export const CategoryItem = styled.div`

@@ -47,7 +47,7 @@ export const Description = styled.p`
   font-weight: 400;
   line-height: 2.4rem;
   letter-spacing: 0.01em;
-  width: 40%;
+  width: 50%;
   color: ${colors.lightText};
 
   /* 896px */
@@ -63,7 +63,8 @@ export const SignupForm = styled.form`
 
   h2 {
     font-size: 3rem;
-    white-space: nowrap;
+    /* margin-top: 15rem; */
+    color: ${colors.black};
   }
 `;
 
