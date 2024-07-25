@@ -6,6 +6,7 @@ export const HeroContainer = styled.div`
   background-color: ${colors.lightYellow};
   padding: 6rem;
   position: relative;
+  z-index: 1;
 
   img {
     height: 100%;

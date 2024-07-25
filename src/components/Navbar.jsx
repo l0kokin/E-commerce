@@ -1,21 +1,51 @@
-import React from "react";
-import { Nav, NavLink, Logo, NavItem } from "./NavBarStyles";
-import { ReactComponent as SearchIcon } from "../icons/search.svg";
+import React, { useState } from "react";
+import {
+  Nav,
+  NavLink,
+  Logo,
+  NavItem,
+  BurgerMenu,
+  Menu,
+  Close,
+} from "./NavBarStyles";
+import { ReactComponent as BurgerIcon } from "../icons/burger.svg";
+import { ReactComponent as CloseIcon } from "../icons/close.svg";
 
 function Navbar() {
+  const [openBurgerMenu, setOpenBurgerMenu] = useState(true);
+
+  const toggleMenu = () => {
+    setOpenBurgerMenu(!openBurgerMenu);
+  };
+
   return (
-    <Nav>
-      <NavItem to="/">
-        <Logo>SoCo</Logo>
-      </NavItem>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/products">Products</NavLink>
-      <NavLink to="/cart">Cart</NavLink>
-      <NavLink to="/subscribe">Subscribe</NavLink>
-      <NavItem to="/products">
-        <SearchIcon />
-      </NavItem>
-    </Nav>
+    <>
+      <Nav>
+        <NavItem to="/">
+          <Logo>SoCo</Logo>
+          <BurgerMenu onClick={toggleMenu}>
+            <BurgerIcon />
+          </BurgerMenu>
+        </NavItem>
+        <Menu open={openBurgerMenu}>
+          <Close onClick={toggleMenu}>
+            <CloseIcon />
+          </Close>
+          <NavLink to="/" onClick={toggleMenu}>
+            Home
+          </NavLink>
+          <NavLink to="/products" onClick={toggleMenu}>
+            Products
+          </NavLink>
+          <NavLink to="/cart" onClick={toggleMenu}>
+            Cart
+          </NavLink>
+          <NavLink to="/subscribe" onClick={toggleMenu}>
+            Subscribe
+          </NavLink>
+        </Menu>
+      </Nav>
+    </>
   );
 }
 

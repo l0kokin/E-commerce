@@ -5,22 +5,46 @@ import { Link } from "react-router-dom";
 export const Nav = styled.nav`
   background-color: ${colors.grey};
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  max-height: 7rem;
+  padding: 0 8rem 0 5rem;
+
+  /* 512px */
+  @media (max-width: 32em) {
+    flex-direction: column;
+    max-height: none;
+  }
 `;
 
 export const Logo = styled.p`
   font-size: 4.2rem;
   font-weight: 700;
-  line-height: 51.2px;
+  line-height: 5.1rem;
+`;
+
+export const Menu = styled.div`
+  display: flex;
+  gap: 7rem;
+
+  @media (max-width: 32em) {
+    display: ${({ open }) => (open ? "flex" : "none")};
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: ${colors.grey};
+    z-index: 1000;
+  }
 `;
 
 export const NavLink = styled(Link)`
   color: ${colors.black};
   font-size: 1.8rem;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 2.4rem;
   letter-spacing: 0.5px;
   text-decoration: none;
   margin: 0 1rem;
@@ -28,14 +52,59 @@ export const NavLink = styled(Link)`
   &:hover {
     box-shadow: inset 0 -2px 0 0 ${colors.black};
   }
+
+  /* 512px */
+  @media (max-width: 32em) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    margin-top: 4rem;
+
+    &:nth-child(2) {
+      margin-top: 20rem;
+    }
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
 `;
 
 export const NavItem = styled(Link)`
   color: ${colors.black};
   font-size: 1.8rem;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 2.4rem;
   letter-spacing: 0.5px;
   text-decoration: none;
   margin: 0 1rem;
+
+  /* 512px */
+  @media (max-width: 32em) {
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+  }
+`;
+
+export const BurgerMenu = styled.div`
+  display: none;
+
+  /* 512px */
+  @media (max-width: 32em) {
+    display: flex;
+  }
+`;
+
+export const Close = styled.div`
+  display: none;
+
+  /* 512px */
+  @media (max-width: 32em) {
+    display: flex;
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+  }
 `;

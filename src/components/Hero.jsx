@@ -1,4 +1,3 @@
-// import HeroImg from "../images/heroimg.png";
 import HeroImg from "../images/hero.webp";
 import { ButtonBlack, HeroContainer, HeroText } from "./HeroStyles";
 
