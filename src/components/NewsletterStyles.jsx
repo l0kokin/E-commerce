@@ -16,7 +16,7 @@ export const NewsletterContainer = styled.div`
     font-family: Value Serif Pro;
     font-size: 4.8rem;
     font-weight: 400;
-    line-height: 5.7rem;
+    line-height: 4.6rem;
     text-align: left;
     width: 50%;
     z-index: 1000;

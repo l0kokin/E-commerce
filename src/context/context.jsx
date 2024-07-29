@@ -18,6 +18,7 @@ export const ProductProvider = ({ children }) => {
     fetchByCategory: () => {},
     addToCart: () => {},
     deleteFromCart: () => {},
+    // fetchProductById: () => {},
   });
 
   useEffect(() => {
@@ -30,6 +31,7 @@ export const ProductProvider = ({ children }) => {
         fetchByCategory,
         addToCart,
         deleteFromCart,
+        fetchProductById,
       };
     });
   }, []);
@@ -120,6 +122,20 @@ export const ProductProvider = ({ children }) => {
       }
       return ctx;
     });
+  };
+
+  const fetchProductById = async (id) => {
+    try {
+      const response = await fetch(`${BASE_URL}/${id}`);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching product:", error);
+      return null;
+    }
   };
 
   return (
