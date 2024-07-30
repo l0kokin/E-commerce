@@ -9,27 +9,32 @@ const ProductCard = ({ product }) => {
   const isInCart = cart.some((cartItem) => cartItem.id === product.id);
 
   return (
-    <Link
-      to={`/product/${product.id}`}
-      style={{ textDecoration: "none", color: "inherit" }}
-    >
-      <Card>
+    <Card>
+      <Link
+        to={`/product/${product.id}`}
+        style={{
+          textDecoration: "none",
+          color: "inherit",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
         <h3>{trimString(product.title, 3)}</h3>
         <p>{trimString(product.description, 8)}</p>
         <img src={product.image} alt={product.title} />
         <span>${product.price}</span>
-
-        {!isInCart ? (
-          <ButtonYellow onClick={() => addToCart(product)}>
-            Add to Cart
-          </ButtonYellow>
-        ) : (
-          <ButtonYellow onClick={() => deleteFromCart(product)}>
-            Delete from Cart
-          </ButtonYellow>
-        )}
-      </Card>
-    </Link>
+      </Link>
+      {!isInCart ? (
+        <ButtonYellow onClick={() => addToCart(product)}>
+          Add to Cart
+        </ButtonYellow>
+      ) : (
+        <ButtonYellow onClick={() => deleteFromCart(product)}>
+          Delete from Cart
+        </ButtonYellow>
+      )}
+    </Card>
   );
 };
 

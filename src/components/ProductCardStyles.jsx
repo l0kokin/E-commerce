@@ -49,6 +49,7 @@ export const Card = styled.div`
     font-weight: 500;
     line-height: 1rem;
     margin-top: 2.5rem;
+    text-align: center;
   }
 `;
 

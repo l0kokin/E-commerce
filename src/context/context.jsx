@@ -18,7 +18,7 @@ export const ProductProvider = ({ children }) => {
     fetchByCategory: () => {},
     addToCart: () => {},
     deleteFromCart: () => {},
-    // fetchProductById: () => {},
+    fetchProductById: () => {},
   });
 
   useEffect(() => {
