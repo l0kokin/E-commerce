@@ -11,6 +11,7 @@ import CategoryList from "./components/CategoryList";
 import ProductList from "./components/ProductList";
 import ScrollToTop from "./components/ScrollToTop";
 import ProductItemPage from "./pages/ProductItemPage";
+import AboutUsPage from "./pages/AboutUsPage";
 
 const App = () => {
   return (
@@ -23,9 +24,10 @@ const App = () => {
           <Route path="/cart" element={<CartPage />} />
           <Route path="/products" element={<Search />} />
           <Route path="/subscribe" element={<SubscribePage />} />
-          <Route path="/" element={<CategoryList />} />
+          <Route path="/categories" element={<CategoryList />} />
           <Route path="/products" element={<ProductList />} />
           <Route path="/product/:id" element={<ProductItemPage />} />
+          <Route path="/about" element={<AboutUsPage />} />
         </Routes>
         <Footer />
       </ProductProvider>

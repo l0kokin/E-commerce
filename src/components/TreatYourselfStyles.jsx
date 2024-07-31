@@ -5,9 +5,9 @@ export const TreatYourselfContainer = styled.div`
   margin: 16rem 2rem 6rem 2rem;
 
   h2 {
-    font-size: 4.8rem;
+    font-size: 4rem;
     font-weight: 400;
-    line-height: 5.7rem;
+    line-height: 5rem;
     text-align: center;
   }
 `;

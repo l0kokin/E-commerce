@@ -40,6 +40,9 @@ function Navbar() {
           <NavLink to="/cart" onClick={toggleMenu}>
             Cart
           </NavLink>
+          <NavLink to="/about" onClick={toggleMenu}>
+            About us
+          </NavLink>
           <NavLink to="/subscribe" onClick={toggleMenu}>
             Subscribe
           </NavLink>

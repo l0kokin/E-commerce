@@ -9,8 +9,8 @@ export const Nav = styled.nav`
   align-items: center;
   padding: 0 8rem 0 5rem;
 
-  /* 512px */
-  @media (max-width: 32em) {
+  /* 600px */
+  @media (max-width: 37.5em) {
     flex-direction: column;
     max-height: none;
   }
@@ -26,7 +26,13 @@ export const Menu = styled.div`
   display: flex;
   gap: 7rem;
 
-  @media (max-width: 32em) {
+  /* 752px */
+  @media (max-width: 47em) {
+    gap: 5rem;
+  }
+
+  /* 600px */
+  @media (max-width: 37.5em) {
     display: ${({ open }) => (open ? "flex" : "none")};
     flex-direction: column;
     align-items: center;
@@ -48,13 +54,14 @@ export const NavLink = styled(Link)`
   letter-spacing: 0.5px;
   text-decoration: none;
   margin: 0 1rem;
+  white-space: nowrap;
 
-  &:hover {
+  text &:hover {
     box-shadow: inset 0 -2px 0 0 ${colors.black};
   }
 
-  /* 512px */
-  @media (max-width: 32em) {
+  /* 600px */
+  @media (max-width: 37.5em) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,8 +87,8 @@ export const NavItem = styled(Link)`
   text-decoration: none;
   margin: 0 1rem;
 
-  /* 512px */
-  @media (max-width: 32em) {
+  /* 600px */
+  @media (max-width: 37.5em) {
     display: flex;
     align-items: center;
     gap: 10rem;
@@ -91,8 +98,8 @@ export const NavItem = styled(Link)`
 export const BurgerMenu = styled.div`
   display: none;
 
-  /* 512px */
-  @media (max-width: 32em) {
+  /* 600px */
+  @media (max-width: 37.5em) {
     display: flex;
   }
 `;
@@ -100,8 +107,8 @@ export const BurgerMenu = styled.div`
 export const Close = styled.div`
   display: none;
 
-  /* 512px */
-  @media (max-width: 32em) {
+  /* 600px */
+  @media (max-width: 37.5em) {
     display: flex;
     position: absolute;
     top: 3rem;
